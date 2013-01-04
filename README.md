@@ -14,7 +14,7 @@ var data = DataAttrStorage.get(element);
 ## set()
 ```
 var element = document.getElementById('someId');
-DataAttrStorage.get(element, {
+DataAttrStorage.set(element, {
 	foo: 'bar',
 	john: 'doe'
 });
