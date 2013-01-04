@@ -1,4 +1,4 @@
-# Data Attribute Pattern
+# Data Attribute
 This library uses a alternative to HTML5 Data Attribute, making use of a Hash to store data attributes values.
 
 # Why
