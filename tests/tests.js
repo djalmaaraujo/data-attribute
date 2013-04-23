@@ -30,3 +30,17 @@ test( "Set a element", function() {
 
   ok(DataAttrStorage.get(element).foo = "bar", "Passed!");
 });
+
+test( "Clear all database", function() {
+  var element = {};
+
+  DataAttrStorage.set(element, {
+    foo: 'bar',
+    something: 'else',
+    ok: false
+  });
+
+  DataAttrStorage.clear();
+
+  ok(DataAttrStorage.get(element) === undefined, "Passed!");
+});
