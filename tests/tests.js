@@ -4,10 +4,6 @@ test( "Library exists", function() {
   ok(DataAttr instanceof DataAttrStorage, "Passed!" );
 });
 
-test( "Security: Don't allow access to 'Storage' variable", function() {
-  ok(DataAttr.storage === undefined, "Passed!");
-});
-
 test( "Get a element", function() {
   var element = {
     __data: {
@@ -30,7 +26,7 @@ test( "Set a element", function() {
     something: 'else'
   });
 
-  ok(DataAttr.get(element).foo = "bar", "Passed!");
+  ok(DataAttr.get(element).foo = "bar", "Passed! ");
 });
 
 test( "Clear all database", function() {
