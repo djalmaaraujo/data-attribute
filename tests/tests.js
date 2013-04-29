@@ -1,9 +1,11 @@
+var DataAttr = new DataAttrStorage();
+
 test( "Library exists", function() {
-  ok(DataAttrStorage, "Passed!" );
+  ok(DataAttr instanceof DataAttrStorage, "Passed!" );
 });
 
 test( "Security: Don't allow access to 'Storage' variable", function() {
-  ok(DataAttrStorage.storage == undefined, "Passed!");
+  ok(DataAttr.storage === undefined, "Passed!");
 });
 
 test( "Get a element", function() {
@@ -13,9 +15,9 @@ test( "Get a element", function() {
     }
   };
 
-  DataAttrStorage.set(element, element.__data);
+  DataAttr.set(element, element.__data);
 
-  var element = DataAttrStorage.get(element);
+  var element = DataAttr.get(element);
 
   ok(element.hello === 'world', "Passed!");
 });
@@ -23,24 +25,24 @@ test( "Get a element", function() {
 test( "Set a element", function() {
   var element = {};
 
-  DataAttrStorage.set(element, {
+  DataAttr.set(element, {
     foo: 'bar',
     something: 'else'
   });
 
-  ok(DataAttrStorage.get(element).foo = "bar", "Passed!");
+  ok(DataAttr.get(element).foo = "bar", "Passed!");
 });
 
 test( "Clear all database", function() {
   var element = {};
 
-  DataAttrStorage.set(element, {
+  DataAttr.set(element, {
     foo: 'bar',
     something: 'else',
     ok: false
   });
 
-  DataAttrStorage.clear();
+  DataAttr.clear();
 
-  ok(DataAttrStorage.get(element) === undefined, "Passed!");
+  ok(DataAttr.get(element) === undefined, "Passed!");
 });
